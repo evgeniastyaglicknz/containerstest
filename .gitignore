@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TestContainers.API/bin/Debug/net8.0
+/TestContainers.API/obj
+/TestContainers.BusinessLogic/bin/Debug/net8.0
+/TestContainers.BusinessLogic/obj
+/TestContainers.DAL/bin/Debug/net8.0
+/TestContainers.DAL/obj
+/TestContainers.Interfaces/bin/Debug/net8.0
+/TestContainers.Interfaces/obj
+/TestContainers.Models/obj
+/TestContainers.Models/bin/Debug/net8.0
+/.vs
