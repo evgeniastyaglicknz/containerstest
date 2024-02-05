@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using TestContainers.API.Extensions;
 using TestContainers.API.Mapper;
+using TestContainers.BusinessLogic;
 using TestContainers.DAL;
+using TestContainers.Interfaces;
 
 namespace TestContainers.API;
 
@@ -21,8 +23,9 @@ public class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddDbContext<DbTestContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("testPortgres")));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("testPortgres"), b => b.MigrationsAssembly("TestContainers.API")));
 
+        builder.Services.AddTransient<IWeatherManager, WeatherManager>();
 
         var app = builder.Build();
 
@@ -38,6 +41,8 @@ public class Program
         app.UseAuthorization();
 
         app.ApplyMigrations();
+        app.SeedDatabase();
+
         app.MapControllers();
 
         app.Run();

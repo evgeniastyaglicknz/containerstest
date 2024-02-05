@@ -1,17 +1,13 @@
 ﻿using TestContainers.DAL;
 using TestContainers.Interfaces;
 using TestContainers.Models;
+using TestContainers.Models.StaticData;
 
 namespace TestContainers.BusinessLogic
 {
     public class WeatherManager : IWeatherManager
     {
         private readonly DbTestContext _db;
-
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
         public WeatherManager(DbTestContext db) 
         { 
@@ -24,7 +20,7 @@ namespace TestContainers.BusinessLogic
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                Summary = StaticData.Summaries[Random.Shared.Next(StaticData.Summaries.Length)]
             })
             .ToArray();
         }
