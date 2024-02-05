@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestContainers.DAL", "TestC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestContainers.API", "TestContainers.API\TestContainers.API.csproj", "{CC016AD0-C308-4F06-B4F8-8AE8AA306930}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestContainers.BusinessLogic", "TestContainers.BusinessLogic\TestContainers.BusinessLogic.csproj", "{C647317A-EF1A-4A73-8540-0F83803D4002}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestContainers.BusinessLogic", "TestContainers.BusinessLogic\TestContainers.BusinessLogic.csproj", "{C647317A-EF1A-4A73-8540-0F83803D4002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestContainers.Interfaces", "TestContainers.Interfaces\TestContainers.Interfaces.csproj", "{0B2CACDE-22CF-426D-8952-70FD05802004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestContainers.Interfaces", "TestContainers.Interfaces\TestContainers.Interfaces.csproj", "{0B2CACDE-22CF-426D-8952-70FD05802004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestContainers.Models", "TestContainers.Models\TestContainers.Models.csproj", "{FA3A86BB-FDF1-4F2E-96DB-A65DB1E1FB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestContainers.Models", "TestContainers.Models\TestContainers.Models.csproj", "{FA3A86BB-FDF1-4F2E-96DB-A65DB1E1FB3D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2E4D7BB3-8931-4694-9CF6-D34D659628AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FA3A86BB-FDF1-4F2E-96DB-A65DB1E1FB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA3A86BB-FDF1-4F2E-96DB-A65DB1E1FB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA3A86BB-FDF1-4F2E-96DB-A65DB1E1FB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E4D7BB3-8931-4694-9CF6-D34D659628AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E4D7BB3-8931-4694-9CF6-D34D659628AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E4D7BB3-8931-4694-9CF6-D34D659628AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E4D7BB3-8931-4694-9CF6-D34D659628AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

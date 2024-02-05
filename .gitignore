@@ -13,3 +13,5 @@
 /TestContainers.Models/obj
 /TestContainers.Models/bin/Debug/net8.0
 /.vs
+/bin/Debug
+/obj

@@ -1,4 +1,7 @@
-﻿using TestContainers.DAL;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using TestContainers.DAL;
+using TestContainers.DAL.Entities;
 using TestContainers.Interfaces;
 using TestContainers.Models;
 using TestContainers.Models.StaticData;
@@ -8,21 +11,20 @@ namespace TestContainers.BusinessLogic
     public class WeatherManager : IWeatherManager
     {
         private readonly DbTestContext _db;
+        private readonly IMapper _mapper;
 
-        public WeatherManager(DbTestContext db) 
+        public WeatherManager(DbTestContext db, IMapper mapper) 
         { 
             _db = db;
+            _mapper = mapper;
         }
 
-        public IEnumerable<WeatherModel> GetWeatherData()
+        public async Task<List<WeatherModel>> GetWeatherData()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherModel
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = StaticData.Summaries[Random.Shared.Next(StaticData.Summaries.Length)]
-            })
-            .ToArray();
+            var data = await _db.WeatherData.ToListAsync();
+
+            return _mapper.Map<List<Weather>, List<WeatherModel>>(data);
+
         }
     }
 }

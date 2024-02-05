@@ -4,6 +4,6 @@ namespace TestContainers.Interfaces
 {
     public interface IWeatherManager
     {
-        IEnumerable<WeatherModel> GetWeatherData();
+        Task<List<WeatherModel>> GetWeatherData();
     }
 }

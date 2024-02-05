@@ -28,9 +28,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherViewModel> Get()
+    public async Task<IEnumerable<WeatherViewModel>> Get()
     {
-        var data = _weatherManager.GetWeatherData();
+        var data = await _weatherManager.GetWeatherData();
         return _mapper.Map<IEnumerable<WeatherModel>, IEnumerable<WeatherViewModel>>(data);
     }
 }
